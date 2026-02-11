@@ -1,317 +1,121 @@
+# 🌱 BrainBonsai
 
-# BrainBonsai 🌳🧠
+**BrainBonsai** is a gamified Web3 learning and onboarding platform that helps people understand blockchain ecosystems through exploration, not static courses.
 
-AI-Powered Web3 Learning Tree with Blockchain Simulation & Automatic NFT Rewards
+Learning is visualized as a growing digital garden.  
+When a learning tree reaches maturity, users receive an **on-chain NFT credential** representing their learning journey.
 
-BrainBonsai is an interactive Web3 education platform that combines AI-generated knowledge trees, blockchain simulation, structured progression, and automatic NFT minting into a gamified learning experience.
-
-Users grow structured learning trees, unlock knowledge step-by-step, understand blockchain by simulating it, and earn NFTs automatically as proof of mastery.
-
----
-
-## 🌱 Project Overview
-
-BrainBonsai transforms complex blockchain and smart contract concepts into a visual tree-based journey.
-
-Users:
-
-* Log in using Google authentication
-* Automatically receive a blockchain wallet (no MetaMask required)
-* Choose a seed topic (e.g., Smart Contracts)
-* Grow AI-generated structured subtopics
-* Unlock deeper knowledge through lock-based progression
-* Automatically mint NFTs when mastery milestones are reached
-* Learn blockchain mechanics through an interactive simulator
-
-The tree visually represents knowledge growth. Branches expand into structured subtopics generated using Groq AI.
+BrainBonsai is designed for **confidence-building**, not speculation.
 
 ---
 
-## 🚀 Core Features
+## 🧠 The Problem
 
-### 🌳 AI-Generated Knowledge Trees (Groq AI)
-
-Users select a seed topic such as:
-
-* Smart Contracts
-* Blockchain Fundamentals
-* NFTs
-* DeFi
-
-Groq AI generates structured subtopics dynamically, forming branches that expand logically from the root.
-
-The system maintains topic hierarchy and ensures meaningful progression.
+Web3 onboarding is broken because:
+- Wallets, gas, and transactions feel irreversible and risky
+- Learning resources become outdated quickly
+- Proof of learning is informal and non-verifiable
+- New users are forced into technical complexity too early
 
 ---
 
-### 🔐 Lock-Based Learning System
+## 🌳 The BrainBonsai Solution
 
-BrainBonsai enforces structured mastery:
+BrainBonsai introduces **progressive, low-fear onboarding** using three layers:
 
-* Users cannot unlock deeper branches unless prerequisite branches are completed
-* Prevents skipping foundational knowledge
-* Encourages sequential understanding
+1. **Simulation (Sandbox)** — zero-risk interaction with Web3 concepts  
+2. **Exploration (Learning Garden)** — guided conceptual understanding  
+3. **Verification (On-chain Credential)** — proof of learning on-chain  
 
-This ensures conceptual clarity instead of surface-level browsing.
-
----
-
-### 🪙 Automatic NFT Minting
-
-NFT rewards are generated automatically.
-
-When:
-
-* A knowledge tree grows beyond 8 branches
-* The user completes structured progression milestones
-
-An NFT is minted automatically via Solidity smart contracts.
-
-The NFT represents proof of learning achievement and is sent directly to the user's generated wallet.
-
-No manual minting required.
+Users are never forced into real blockchain interactions before they are ready.
 
 ---
 
-### 🔐 Google Authentication + Wallet Creation
+## 🌱 Learning Model
 
-To remove Web3 friction:
+Each topic is represented as a **seed**:
+- Ethereum
+- Layer 2s
+- Zero-Knowledge Proofs
+- DeFi primitives
+- Protocol ecosystems
 
-* Users log in using Google OAuth
-* A blockchain wallet is automatically generated
-* No MetaMask setup required
-* Designed for beginners entering Web3
+### Learning actions grow the tree:
+- Exploring concepts → branches
+- Flashcards → leaves
+- Quizzes → fruits & flowers
 
-Wallets are securely tied to user accounts and interact with the smart contract system for NFT minting.
-
----
-
-## 🌿 BlockLearn — Interactive Blockchain Simulator
-
-BrainBonsai includes a fully interactive blockchain simulator called **BlockLearn**.
-
-Instead of reading about blockchain concepts, users simulate them directly.
-
-### What Users Learn:
-
-* Wallet creation
-* Public & private keys
-* Blockchain ledger mechanics
-* Transactions
-* Gas fees
-* Mempool behavior
-* Block mining
-* Hashing
-* Transaction confirmation
+Tree maturity increases with engagement, not time.
 
 ---
 
-### 🪙 Bonsai Token (BON)
+## 🏅 On-Chain Learning Credentials
 
-The simulator uses **Bonsai Token (BON)**:
+When a tree reaches maturity, BrainBonsai mints a **learning credential NFT**.
 
-* BON behaves like ETH
-* Used for sending transactions
-* Demonstrates gas mechanics safely
-* No real crypto involved
+### NFT Standard
+- **ERC-721**
+- One NFT per completed learning seed
+- Non-financial, non-transfer-focused usage
 
----
+### NFT Represents
+- Topic explored
+- Completion status
+- Issuer (BrainBonsai)
+- Timestamp and metadata
+- Wallet ownership
 
-### 🔁 Transaction Lifecycle Simulation
-
-Users can:
-
-1. Create a wallet
-2. Generate an address
-3. Send BON tokens
-4. Select gas speed (Slow / Standard / Fast)
-5. Sign and broadcast transactions
-6. Watch transactions move:
-
-   * Wallet → Mempool → Block
-7. View the public blockchain ledger
-8. Inspect blocks, hashes, gas fees, and transaction amounts
-
-The journey overlay visually shows how transactions propagate through the network.
-
-This interactive simulation teaches blockchain fundamentals intuitively.
+> These NFTs are **proof of participation and understanding**, not academic certificates.
 
 ---
 
+## ⛽ Gasless & Beginner-Friendly Minting
 
-## 🧠 Game Flow
+BrainBonsai removes friction by sponsoring transactions:
 
-BrainBonsai turns learning into a living knowledge tree where every element represents progress.
+- Users do **not** need ETH
+- Gas fees are paid by the platform
+- NFTs are minted directly to user wallets
 
----
-
-### 1️⃣ Login & Wallet Creation
-
-Users sign in with Google.
-A blockchain wallet is automatically generated — no MetaMask required.
+This enables **first-time Web3 participation without financial risk**.
 
 ---
 
-### 2️⃣ Choose a Seed
+## 🧾 Account Abstraction & Wallets
 
-Select a topic like:
+BrainBonsai uses a **progressive custody model**:
 
-* Smart Contracts
-* Blockchain Fundamentals
-* NFTs
-* DeFi
+### Current Architecture
+- Wallets are created automatically on sign-in
+- Private keys are encrypted at rest
+- Users interact without handling keys directly
 
-This becomes the root of your knowledge tree.
+### Forward-Compatible Design
+BrainBonsai is designed to support:
+- **ERC-4337 (Account Abstraction)**
+- Gas sponsorship via paymasters
+- Session keys for limited permissions
+- Optional migration to full self-custody
 
----
-
-### 3️⃣ Grow the Tree
-
-Groq AI generates structured subtopics as branches.
-Each branch represents a key concept.
-
-Progression is hierarchical and lock-based — foundational topics must be completed before unlocking deeper ones.
+> Custodial by default. User-owned by choice.
 
 ---
 
-### 4️⃣ Add Leaves (Flashcards) 🍃
+## 🧸 Web3 Sandbox (Simulation Layer)
 
-Leaves represent flashcards.
+BrainBonsai includes an interactive **Web3 Sandbox** that simulates:
 
-* Users can add unlimited flashcards to any branch
-* Each leaf strengthens understanding of that topic
+- Wallet addresses
+- Token transfers
+- Transaction confirmations
+- Gas fees
+- Block explorers
+- NFTs and ownership
 
-More leaves = deeper learning.
+### Sandbox Principles
+- No real blockchain
+- No real keys
+- No real money
+- Fully reversible actions
 
----
-
-### 5️⃣ Flowers → Fruits → Quiz 🌸🍎
-
-* **Flowers** represent active learning (knowledge in progress)
-* **Fruits** represent completed understanding
-
-When a fruit is plucked:
-
-* A quiz popup appears
-* Users receive scores and feedback
-* Mastery is validated
-
-Passing unlocks deeper branches.
-
----
-
-### 6️⃣ Automatic NFT Minting 🪙
-
-When the tree grows beyond **8+ branches** and milestones are completed:
-
-* An NFT is minted automatically
-* Sent directly to the user’s generated wallet
-* Serves as proof of learning achievement
-
----
-
-### 7️⃣ Learn Blockchain with BlockLearn
-
-Users simulate:
-
-* Wallet creation
-* Transactions
-* Gas selection
-* Mempool behavior
-* Block confirmation
-* Public ledger updates
-
-
-Use BlockLearn simulator to understand real blockchain mechanics interactively.
-
----
-
-## 🧱 Technology Stack
-
-### Backend
-
-* FastAPI
-* SQLAlchemy
-* SQLite
-* Google OAuth
-* Groq AI API
-
-### Frontend
-
-* Vanilla JavaScript
-* HTML5 Canvas
-* Interactive simulation modules
-
-### Blockchain
-
-* Solidity smart contracts
-* Automated NFT minting logic
----
-
-## 🗄 Database Design
-
-Core entities:
-
-* User
-* Wallet
-* LearningSession
-* Branch
-* NFTAchievement
-* BlockchainSimulationState
-
-Learning state is stored to enforce progression locks and milestone tracking.
-
----
-
-## ⚙️ Installation & Setup
-
-### Prerequisites
-
-* Python 3.8+
-* Virtual environment recommended
-
----
-
-### Backend Setup
-
-```bash
-cd backend
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-python main.py
-```
-
-Server runs at:
-
-```
-http://localhost:8001
-```
-
----
-
-### Environment Variables
-
-Create a `.env` file in `backend/`:
-
-```
-GROQ_API_KEY=your_groq_api_key
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-BLOCKCHAIN_PRIVATE_KEY=your_private_key
-```
-
----
-
-## 🎯 Vision
-
-BrainBonsai aims to:
-
-* Remove Web3 onboarding friction
-* Teach blockchain mechanics interactively
-* Enforce structured mastery
-* Reward learning with verifiable NFTs
-* Combine AI + Education + Blockchain into one ecosystem
-
-It is a beginner-friendly Web3 learning platform where knowledge grows like a tree — and mastery becomes a digital asset.
-
+The sandbox builds mental models **before** real on-
