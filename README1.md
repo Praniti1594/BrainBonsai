@@ -138,29 +138,89 @@ This interactive simulation teaches blockchain fundamentals intuitively.
 
 ---
 
+
 ## 🧠 Game Flow
 
-### Step 1: Login
+BrainBonsai turns learning into a living knowledge tree where every element represents progress.
 
-Google authentication creates a wallet automatically.
+---
 
-### Step 2: Choose a Seed
+### 1️⃣ Login & Wallet Creation
 
-Select a topic like Smart Contracts.
+Users sign in with Google.
+A blockchain wallet is automatically generated — no MetaMask required.
 
-### Step 3: Grow the Tree
+---
+
+### 2️⃣ Choose a Seed
+
+Select a topic like:
+
+* Smart Contracts
+* Blockchain Fundamentals
+* NFTs
+* DeFi
+
+This becomes the root of your knowledge tree.
+
+---
+
+### 3️⃣ Grow the Tree
 
 Groq AI generates structured subtopics as branches.
+Each branch represents a key concept.
 
-### Step 4: Unlock Knowledge
+Progression is hierarchical and lock-based — foundational topics must be completed before unlocking deeper ones.
 
-Complete branches to unlock deeper concepts.
+---
 
-### Step 5: Reach Milestone
+### 4️⃣ Add Leaves (Flashcards) 🍃
 
-When tree size exceeds 8+ branches, NFT minting triggers automatically.
+Leaves represent flashcards.
 
-### Step 6: Learn Blockchain
+* Users can add unlimited flashcards to any branch
+* Each leaf strengthens understanding of that topic
+
+More leaves = deeper learning.
+
+---
+
+### 5️⃣ Flowers → Fruits → Quiz 🌸🍎
+
+* **Flowers** represent active learning (knowledge in progress)
+* **Fruits** represent completed understanding
+
+When a fruit is plucked:
+
+* A quiz popup appears
+* Users receive scores and feedback
+* Mastery is validated
+
+Passing unlocks deeper branches.
+
+---
+
+### 6️⃣ Automatic NFT Minting 🪙
+
+When the tree grows beyond **8+ branches** and milestones are completed:
+
+* An NFT is minted automatically
+* Sent directly to the user’s generated wallet
+* Serves as proof of learning achievement
+
+---
+
+### 7️⃣ Learn Blockchain with BlockLearn
+
+Users simulate:
+
+* Wallet creation
+* Transactions
+* Gas selection
+* Mempool behavior
+* Block confirmation
+* Public ledger updates
+
 
 Use BlockLearn simulator to understand real blockchain mechanics interactively.
 
