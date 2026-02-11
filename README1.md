@@ -246,21 +246,6 @@ Use BlockLearn simulator to understand real blockchain mechanics interactively.
 
 * Solidity smart contracts
 * Automated NFT minting logic
-* Wallet generation system
-
----
-
-## 🔗 Smart Contracts
-
-Written in Solidity.
-
-Responsibilities:
-
-* Mint achievement NFTs
-* Store metadata for learning milestones
-* Interact with backend wallet system
-* Trigger minting automatically when tree milestone conditions are met
-
 ---
 
 ## 🗄 Database Design
