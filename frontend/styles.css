@@ -621,7 +621,7 @@ body.day-mode .status {
 }
 
 .subtitle {
-  font-size: 13px;
+  font-size: 16px;
   text-align: center;
   opacity: 0.75;
   margin-bottom: 18px;
@@ -652,12 +652,12 @@ body.day-mode .status {
 .seed-title {
   display: block;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .seed-desc {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.85;
   margin-top: 4px;
 }

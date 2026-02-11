@@ -239,14 +239,24 @@ class FlashcardManager {
             color: white;
         `;
 
-        let deckHTML = `
-            <div style="margin-bottom: 15px;">
-                <h3 style="margin: 0 0 15px 0; color: #fff; font-size: 16px; font-weight: 600;">📚 Flashcard Decks</h3>
-                <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-bottom: 10px; padding: 8px; background: rgba(255,255,255,0.05); border-radius: 5px; font-weight: 600; color: #ccc;">
-                    <div>Deck</div>
-                    <div>Cards</div>
-                </div>
-        `;
+     let deckHTML = `
+    <div style="margin-bottom: 15px;">
+        <div style="
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            font-weight: 600;
+            color: #cbd5f5;
+        ">
+            <div>Deck</div>
+            <div>Cards</div>
+        </div>
+`;
+
 
         [...grouped.entries()].forEach(([topic, cards]) => {
             deckHTML += `
@@ -332,7 +342,29 @@ class FlashcardManager {
                     <div class="flashcard" style="border: 1px solid #334155; border-radius: 8px; margin: 10px 0; padding: 16px; background: #2a2a2a; cursor: pointer; font-family: 'Inter', sans-serif;" data-card-id='${card.id}' data-node-position='${JSON.stringify(defaultPosition(card))}' data-branch-id='${card.branchId || card.branch?.id || ''}'>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                             <span style="color: #3b82f6; font-weight: bold;">Card ${index + 1}</span>
-                            <span style="color: #666; font-size: 12px;">${card.difficulty}</span>
+                            <span style="
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    background: ${
+        card.difficulty === 'easy'
+            ? 'rgba(34,197,94,0.15)'
+            : card.difficulty === 'hard'
+            ? 'rgba(239,68,68,0.15)'
+            : 'rgba(59,130,246,0.15)'
+    };
+    color: ${
+        card.difficulty === 'easy'
+            ? '#86efac'
+            : card.difficulty === 'hard'
+            ? '#fca5a5'
+            : '#93c5fd'
+    };
+">
+    ${card.difficulty}
+</span>
+
                         </div>
                         <div style="margin-bottom: 10px;">
                             <strong style="color: #fff;">Q:</strong> ${this.game.formatContent(card.front)}
@@ -428,7 +460,29 @@ class FlashcardManager {
                     <div class="flashcard" style="border: 1px solid #334155; border-radius: 8px; margin: 10px 0; padding: 16px; background: #2a2a2a; cursor: pointer; font-family: 'Inter', sans-serif;" data-card-id='${card.id}' data-node-position='${JSON.stringify(defaultPosition(card))}' data-branch-id='${card.branchId || card.branch?.id || ''}'>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                             <span style="color: #3b82f6; font-weight: bold;">Card ${index + 1}</span>
-                            <span style="color: #666; font-size: 12px;">${card.difficulty}</span>
+                           <span style="
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    background: ${
+        card.difficulty === 'easy'
+            ? 'rgba(34,197,94,0.15)'
+            : card.difficulty === 'hard'
+            ? 'rgba(239,68,68,0.15)'
+            : 'rgba(59,130,246,0.15)'
+    };
+    color: ${
+        card.difficulty === 'easy'
+            ? '#86efac'
+            : card.difficulty === 'hard'
+            ? '#fca5a5'
+            : '#93c5fd'
+    };
+">
+    ${card.difficulty}
+</span>
+
                         </div>
                         <div style="margin-bottom: 10px;">
                             <strong style="color: #fff;">Q:</strong> ${this.game.formatContent(card.front)}
@@ -540,10 +594,38 @@ class FlashcardManager {
                 <div style="margin-bottom: 20px; border: 1px solid #333; border-radius: 5px; padding: 15px;">
                     <h4 style="color: #3b82f6; margin: 0 0 10px 0;">${topic} (${cards.length} cards)</h4>
                     ${cards.map((card, index) => `
-                        <div style="border: 1px solid #444; border-radius: 3px; margin: 8px 0; padding: 12px; background: #2a2a2a; font-family: 'Inter', sans-serif;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                       <div class="flashcard" style="
+    margin: 8px 0;
+    padding: 16px;
+    border-radius: 12px;
+">
+
+                           
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                                 <span style="color: #3b82f6; font-weight: bold;">Card ${index + 1}</span>
-                                <span style="color: #666; font-size: 12px;">${card.difficulty}</span>
+                                <span style="
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    background: ${
+        card.difficulty === 'easy'
+            ? 'rgba(34,197,94,0.15)'
+            : card.difficulty === 'hard'
+            ? 'rgba(239,68,68,0.15)'
+            : 'rgba(59,130,246,0.15)'
+    };
+    color: ${
+        card.difficulty === 'easy'
+            ? '#86efac'
+            : card.difficulty === 'hard'
+            ? '#fca5a5'
+            : '#93c5fd'
+    };
+">
+    ${card.difficulty}
+</span>
+
                             </div>
                             <div class="flashcard-content">
                                 <strong>Q:</strong> ${this.game.formatContent(card.front)}
@@ -704,40 +786,83 @@ class FlashcardManager {
         return removedCount;
     }
 
-    ensureFlashcardStyles() {
-        if (document.getElementById('flashcard-content-styles')) {
-            return;
+ ensureFlashcardStyles() {
+    if (document.getElementById('flashcard-content-styles')) {
+        return;
+    }
+
+    const style = document.createElement('style');
+    style.id = 'flashcard-content-styles';
+    style.textContent = `
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+        /* CORE OVERRIDES */
+        html body .flashcard,
+        html body .deck-view-modal,
+        html body .flashcard-modal {
+            background: #020403 !important;
+            border: 1px solid #10b981 !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
-        const style = document.createElement('style');
-        style.id = 'flashcard-content-styles';
-        style.textContent = `
-            .flashcard-content {
-                font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-                color: #f8fafc;
-                margin-bottom: 10px;
-            }
+        /* FLASHCARD SURFACE */
+        html body .flashcard {
+            position: relative;
+            background: linear-gradient(160deg, #050a08 0%, #010201 100%) !important;
+            box-shadow:
+                0 0 20px rgba(16, 185, 129, 0.1),
+                inset 0 0 15px rgba(16, 185, 129, 0.05) !important;
+            overflow: hidden;
+        }
 
-            .flashcard-content strong {
-                font-weight: 600;
-                margin-right: 6px;
-                color: inherit;
-            }
+        /* NEON TEXT */
+        html body .flashcard strong {
+            color: #10b981 !important;
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5) !important;
+        }
 
-            .flashcard-content p {
-                margin: 0 0 6px 0;
-                color: inherit;
-                font-family: inherit;
-            }
+        html body .flashcard-content,
+        html body .flashcard div {
+            color: #ecfdf5 !important;
+        }
 
-            .flashcard-content p:last-child {
-                margin-bottom: 0;
-            }
-        `;
-        document.head.appendChild(style);
-    }
+        /* DECK BUTTON */
+        html body #flashcard-deck button {
+            background: #064e3b !important;
+            color: #10b981 !important;
+            border: 1px solid #10b981 !important;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3) !important;
+            font-weight: 700 !important;
+        }
+
+        /* GREEN SHINE */
+        html body .flashcard::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 45%,
+                rgba(16, 185, 129, 0.1) 50%,
+                transparent 55%
+            );
+            animation: forestShine 5s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes forestShine {
+            0% { transform: translateX(-100%) rotate(25deg); }
+            100% { transform: translateX(100%) rotate(25deg); }
+        }
+    `;
+
+    document.head.appendChild(style);
+}
+
+
 
     reset() {
         if (this.flashcards.length > 0) {

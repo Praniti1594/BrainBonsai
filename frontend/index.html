@@ -131,7 +131,7 @@
     <h1>Brain Bonsai</h1>
     <canvas id="gameCanvas"></canvas>
 
-    <div id="authContainer" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+    <div id="authContainer" style="position: fixed; top: 0.1px; right: 45px; z-index: 1000;">
         <div id="g_id_signin"></div>
         <div id="userInfo" style="display:none; margin-top:10px;"></div>
     </div>
@@ -152,6 +152,8 @@
     </div>
 
     <div class="toolbar">
+        <a href="/frontend/js/simulation.html">Sim</a>
+
         <button id="panTool" class="tool-btn"><i class="fas fa-arrows-alt"></i></button>
         <button id="studyTool" class="tool-btn"><i class="fas fa-search"></i></button>
         <button id="growthTool" class="tool-btn active"><i class="fas fa-plus"></i></button>
@@ -164,6 +166,12 @@
         <button id="nft-s" class="tool-btn" onclick="openNftModal()">
             <i class="fas fa-gem"></i>
         </button>
+        <a href="http://127.0.0.1:5501/BrainBonsai/frontend/js/simulation.html" id="nft-s" class="tool-btn">
+  <i class="fas fa-gem"></i>
+</a>
+        
+
+
     </div>
 
     <div class="status" id="status">Game ready!</div>
@@ -344,8 +352,8 @@ function closeNftModal() {
             userInfo.innerHTML = `
                 <div style="padding:12px; background:#1e1e1e; border-radius:8px; display:flex; flex-direction:column; gap:8px; border:1px solid #333;">
                     <div>
-                        <div style="color:#fff; font-weight:600; font-size:13px;">${user.email}</div>
-                        <div style="font-family:'JetBrains Mono'; font-size:10px; color:#00d2ff;">${user.wallet_address.substring(0,6)}...${user.wallet_address.substring(38)}</div>
+                        <div style="color:#fff; font-weight:600; font-size:16px;">${user.email}</div>
+                        <div style="font-family:'JetBrains Mono'; font-size:14px; color:#00d2ff;">${user.wallet_address.substring(0,6)}...${user.wallet_address.substring(38)}</div>
                     </div>
                     <button id="logoutBtn" onclick="handleLogout()" style="
                         padding: 8px 12px;

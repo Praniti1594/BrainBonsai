@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrainBonsai — Try Web3 Safely</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="safety-banner">
+    <span>🟢 Simulation Mode — No real money, no risk</span>
+  </div>
+
+  <div class="page-wrap">
+    <header class="header">
+      <div class="progress-indicator" id="progress-indicator">
+        <span class="progress-label">Web3 Confidence Level:</span>
+        <span class="progress-icons"><span class="icon-active">🌱</span><span>🌿</span><span>🌳</span></span>
+      </div>
+      <h1>Try Web3 — Safely 🌱</h1>
+      <p class="subtitle">Play with Web3 concepts. No real money. Nothing can be lost.</p>
+    </header>
+
+    <main class="main">
+      <section class="section" id="section-wallet" data-section="1">
+        <h2 class="section-title">1. Your Wallet</h2>
+        <div class="card wallet-card">
+          <div class="wallet-address-row">
+            <span class="wallet-address" id="main-address" title="A wallet address is like a public username. It's safe to share.">0xA3F9...92B1</span>
+            <button type="button" class="btn-icon btn-copy" id="btn-copy-main" title="Copy address" aria-label="Copy address">📋</button>
+          </div>
+          <div class="wallet-top">
+            <div class="avatar">🌱</div>
+            <div class="wallet-info">
+              <span class="wallet-label">Balance</span>
+              <span class="wallet-balance" id="main-balance">100</span>
+              <span class="wallet-unit">Demo Coins</span>
+            </div>
+            <div class="wallet-info">
+              <span class="wallet-label">Collectibles</span>
+              <span class="wallet-balance" id="main-collectibles">0</span>
+            </div>
+          </div>
+          <div class="wallet-actions">
+            <button type="button" class="btn btn-primary" id="btn-receive">Receive Demo Coins</button>
+            <button type="button" class="btn btn-secondary" id="btn-send">Send Demo Coins</button>
+          </div>
+          <a href="#" class="link-explorer" id="link-explorer-main">View on Explorer ↗</a>
+        </div>
+        <p class="explanation">A wallet is just a digital backpack that holds your stuff.</p>
+      </section>
+
+      <section class="section section-locked" id="section-transfer" data-section="2">
+        <h2 class="section-title">2. Sending Tokens</h2>
+        <div class="card transfer-card">
+          <div class="transfer-container">
+            <div class="transfer-wallet" id="transfer-you">
+              <span class="transfer-address" id="transfer-you-address">0xA3F9...92B1</span>
+              <span class="transfer-label">You</span>
+              <span class="transfer-balance" id="transfer-you-balance">100</span>
+              <span class="transfer-unit">Demo Coins</span>
+            </div>
+            <div class="transfer-arrow-area">
+              <div class="gas-slider-wrap" title="Higher fees encourage faster processing.">
+                <span class="gas-label">Transaction speed</span>
+                <div class="gas-options">
+                  <label><input type="radio" name="gas" value="0" checked> Slow</label>
+                  <label><input type="radio" name="gas" value="1"> Normal</label>
+                  <label><input type="radio" name="gas" value="2"> Fast</label>
+                </div>
+              </div>
+              <button type="button" class="btn btn-primary btn-transfer" id="btn-send-10">Send 10 Coins</button>
+            </div>
+            <div class="transfer-wallet" id="transfer-friend">
+              <span class="transfer-address" id="transfer-friend-address">0x7B2E...4C91</span>
+              <span class="transfer-label">Friend</span>
+              <span class="transfer-balance" id="transfer-friend-balance">50</span>
+              <span class="transfer-unit">Demo Coins</span>
+            </div>
+          </div>
+          <div class="transaction-list" id="transaction-list"></div>
+        </div>
+        <div class="coins-animation" id="coins-animation" aria-hidden="true"></div>
+        <p class="explanation">On a blockchain, this movement is recorded publicly.</p>
+      </section>
+
+      <section class="section section-locked" id="section-fee" data-section="3">
+        <h2 class="section-title">3. Network Fee (Gas)</h2>
+        <div class="card fee-card">
+          <p class="fee-text">Network fee: <strong id="fee-amount">1</strong> Demo Coin</p>
+          <button type="button" class="btn btn-secondary btn-small" id="btn-why-fee">Why is there a fee?</button>
+        </div>
+        <div class="modal-overlay" id="fee-modal" role="dialog" aria-labelledby="fee-modal-title" aria-hidden="true">
+          <div class="modal">
+            <h3 id="fee-modal-title">Why is there a fee?</h3>
+            <p>Computers around the world verify transactions. The fee rewards them.</p>
+            <button type="button" class="btn btn-primary" id="btn-close-fee">Got it</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-locked" id="section-approve" data-section="4">
+        <h2 class="section-title">4. Approvals & Signatures</h2>
+        <div class="card approve-card">
+          <h3>Approve Action</h3>
+          <div class="approve-actions">
+            <button type="button" class="btn btn-primary" id="btn-approve">Approve</button>
+            <button type="button" class="btn btn-secondary" id="btn-reject">Reject</button>
+          </div>
+          <p class="approve-result" id="approve-result"></p>
+        </div>
+        <p class="explanation">A signature is simply you saying 'yes' to an action.</p>
+      </section>
+
+      <section class="section section-locked" id="section-nft" data-section="5">
+        <h2 class="section-title">5. Your Learning Reward</h2>
+        <div class="tree-container">
+          <div class="tree-stage" id="tree-visual" data-stage="0">
+            <svg class="tree-svg" viewBox="0 0 80 100" aria-hidden="true">
+              <defs>
+                <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#8B7355"/>
+                  <stop offset="100%" style="stop-color:#6B5344"/>
+                </linearGradient>
+              </defs>
+              <rect class="tree-trunk" x="32" y="60" width="16" height="40" fill="url(#trunkGrad)" rx="2"/>
+              <g class="tree-foliage">
+                <ellipse cx="40" cy="35" rx="25" ry="30" fill="#5a9a6e"/>
+                <ellipse cx="40" cy="30" rx="20" ry="25" fill="#6bb87a"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="card nft-card" id="nft-card">
+          <div class="nft-image clickable" id="nft-clickable" role="button" tabindex="0" aria-label="View NFT details">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <rect width="120" height="120" fill="#e8f5e9" rx="8"/>
+              <path d="M60 25 L75 55 L60 85 L45 55 Z" fill="#5a9a6e"/>
+              <circle cx="60" cy="55" r="8" fill="#ffd54f"/>
+              <text x="60" y="105" text-anchor="middle" fill="#6B5344" font-size="10">BrainBonsai</text>
+            </svg>
+          </div>
+          <p class="nft-text">This NFT is proof you completed something — not money.</p>
+        </div>
+        <div class="modal-overlay" id="nft-modal" role="dialog" aria-labelledby="nft-modal-title" aria-hidden="true">
+          <div class="modal modal-nft">
+            <h3 id="nft-modal-title">Learning Reward NFT</h3>
+            <div class="nft-modal-image">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <rect width="120" height="120" fill="#e8f5e9" rx="8"/>
+                <path d="M60 25 L75 55 L60 85 L45 55 Z" fill="#5a9a6e"/>
+                <circle cx="60" cy="55" r="8" fill="#ffd54f"/>
+              </svg>
+            </div>
+            <p class="nft-modal-desc">BrainBonsai Completion Badge — Proof you learned Web3 basics.</p>
+            <dl class="nft-attributes">
+              <dt>Rarity</dt><dd>Common</dd>
+              <dt>Owner</dt><dd class="nft-owner-address" id="nft-owner-address">0xA3F9...92B1</dd>
+            </dl>
+            <p class="nft-explanation">NFTs are digital records of ownership, not files themselves.</p>
+            <button type="button" class="btn btn-primary" id="btn-close-nft">Close</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-locked" id="section-final" data-section="6">
+        <h2 class="section-title">You did it! 🎉</h2>
+        <div class="card final-card">
+          <p class="final-message">You just used Web3 ideas without touching real Web3.</p>
+          <a href="#" class="btn btn-primary btn-large" id="btn-garden">Go back to my BrainBonsai Garden 🌳</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="explorer-modal" role="dialog" aria-labelledby="explorer-modal-title" aria-hidden="true">
+    <div class="modal modal-explorer">
+      <h3 id="explorer-modal-title">Demo Block Explorer</h3>
+      <p class="explorer-disclaimer">This is a simulation, not a real blockchain explorer.</p>
+      <div class="explorer-content">
+        <div class="explorer-row">
+          <span class="explorer-label">Address</span>
+          <span class="explorer-value" id="explorer-address">—</span>
+        </div>
+        <div class="explorer-row">
+          <span class="explorer-label">Balance</span>
+          <span class="explorer-value" id="explorer-balance">—</span>
+        </div>
+        <div class="explorer-row">
+          <span class="explorer-label">NFTs Owned</span>
+          <span class="explorer-value" id="explorer-nfts">—</span>
+        </div>
+        <div class="explorer-section">
+          <span class="explorer-label">Recent Demo Transactions</span>
+          <ul class="explorer-tx-list" id="explorer-tx-list"></ul>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" id="btn-close-explorer">Close</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="confirm-modal" role="dialog" aria-labelledby="confirm-modal-title" aria-hidden="true">
+    <div class="modal">
+      <h3 id="confirm-modal-title">Confirm Transaction</h3>
+      <p class="confirm-explanation">Once confirmed on a real blockchain, transactions cannot be undone.</p>
+      <dl class="confirm-details">
+        <dt>From</dt><dd id="confirm-from">—</dd>
+        <dt>To</dt><dd id="confirm-to">—</dd>
+        <dt>Amount</dt><dd id="confirm-amount">—</dd>
+        <dt>Network fee</dt><dd id="confirm-fee">—</dd>
+      </dl>
+      <div class="confirm-actions">
+        <button type="button" class="btn btn-secondary" id="btn-confirm-cancel">Cancel</button>
+        <button type="button" class="btn btn-primary" id="btn-confirm-ok">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="tx-modal" role="dialog" aria-labelledby="tx-modal-title" aria-hidden="true">
+    <div class="modal">
+      <h3 id="tx-modal-title">Transaction Details</h3>
+      <p class="tx-explanation">Transactions are public records on a blockchain.</p>
+      <dl class="confirm-details">
+        <dt>Transaction hash</dt><dd id="tx-hash">—</dd>
+        <dt>From</dt><dd id="tx-from">—</dd>
+        <dt>To</dt><dd id="tx-to">—</dd>
+        <dt>Amount</dt><dd id="tx-amount">—</dd>
+        <dt>Network fee</dt><dd id="tx-fee">—</dd>
+        <dt>Status</dt><dd id="tx-status">Confirmed</dd>
+      </dl>
+      <button type="button" class="btn btn-primary" id="btn-close-tx">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -45,7 +45,7 @@ window.TreeManager = class TreeManager {
 
         this.game.tree.branches.forEach(branch => {
             const growthRate = 1.5 + Math.random() * 0.7;
-            branch.length += growthRate * deltaTime * 0.01;
+            branch.length += growthRate * deltaTime * 0.08;
 
             if (branch.length > branch.maxLength) {
                 branch.length = branch.maxLength;

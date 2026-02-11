@@ -721,7 +721,7 @@ async def create_flashcards(request: CreateFlashcardsRequest):
 
         # ---------- GROQ FLASHCARD GENERATION ----------
         flashcard_prompt = f"""
-You are an educational AI.
+You are an educational AI that creates deep, explanatory flashcards.
 
 Based on the content below, generate EXACTLY {request.count} flashcards.
 
@@ -729,18 +729,25 @@ Content:
 Title: {search_result_data.get('title', '')}
 Text: {search_result_data.get('llm_content', '')}
 
-Return ONLY valid JSON in this format:
+Return ONLY valid JSON in the following format:
 [
   {{
-    "front": "Question",
-    "back": "Answer",
+    "front": "Clear conceptual question",
+    "back": "A detailed explanation answering the question",
     "difficulty": "easy | medium | hard"
   }}
 ]
 
+Answer requirements:
+- Each "back" answer must be at least 3–5 full sentences
+- Answers should explain *why* and *how*, not just define terms
+- Use examples or analogies where helpful
+- Assume the learner is intelligent but new to the topic
+
 Rules:
 - No markdown
-- No explanations
+- No bullet points
+- No explanations outside JSON
 - JSON array only
 """
 
@@ -1378,6 +1385,12 @@ def apply_growth_and_check_mint(db: Session, session_id: int, increment: int):
         auto_mint_if_eligible(db, garden)
     
     return garden
+app.mount("/frontend", StaticFiles(directory="../frontend"), name="frontend")
+from fastapi.responses import FileResponse
+
+@app.get("/sim")
+def sim():
+    return FileResponse("../frontend/js/simulation.html")
 
 if __name__ == "__main__":
     import uvicorn
