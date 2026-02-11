@@ -1,133 +1,272 @@
-# perplexitree - AI-Powered Knowledge Tree Game
 
+# BrainBonsai 🌳🧠
 
-A beautiful, interactive web game that combines the meditative puzzle mechanics of "Prune" with AI-powered knowledge exploration. Players grow knowledge trees by pruning branches while leveraging the Perplexity API to discover unique, real-time information on any topic. Each growth session returns fresh, non-redundant search results to build comprehensive understanding.
+AI-Powered Web3 Learning Tree with Blockchain Simulation & Automatic NFT Rewards
 
-## Project Summary
+BrainBonsai is an interactive Web3 education platform that combines AI-generated knowledge trees, blockchain simulation, structured progression, and automatic NFT minting into a gamified learning experience.
 
-**Purpose**: perplexitree transforms learning into an engaging, visual experience where users cultivate knowledge trees through strategic pruning and AI-enhanced exploration. The game addresses information overload by presenting unique, curated insights through an intuitive tree metaphor.
+Users grow structured learning trees, unlock knowledge step-by-step, understand blockchain by simulating it, and earn NFTs automatically as proof of mastery.
 
-**Technical Approach**: Built with a modular architecture featuring FastAPI backend and vanilla JavaScript frontend, the application integrates Perplexity's real-time search capabilities to generate unique knowledge areas for each growth session. The system ensures non-redundant information retrieval through intelligent query generation and structured output parsing.
+---
 
-**Perplexity API Integration**: The game leverages Perplexity's reasoning and retrieval capabilities through a two-phase approach:
-- **Initial Search**: Uses Perplexity's `sonar-pro` chat completion model with structured JSON output to generate 5 unique knowledge areas from the initial query
-- **Subsequent Growth**: Uses Perplexity's search model with negative prompting to find unique web results for each new branch
-- **Flashcard Generation**: Uses `sonar-pro` chat completion to create study materials from search results
-- **Unique Results**: Negative prompting system ensures each growth session returns fresh, non-redundant information
+## 🌱 Project Overview
 
-The integration ensures players receive diverse, comprehensive information while maintaining the game's meditative, focused learning experience.
+BrainBonsai transforms complex blockchain and smart contract concepts into a visual tree-based journey.
 
-## Features
+Users:
 
-- **AI-Powered Knowledge Tree**: Grow branches that represent real search results from Perplexity API
-- **Interactive Tools**: 7 different tools for managing your knowledge tree
-- **Unique Search Results**: Each growth session returns fresh, non-redundant information
-- **Study System**: Create flashcards from search results for enhanced learning
-- **Visual Progression**: Transform knowledge into flowers and fruits
-- **Game State Persistence**: Save and load your knowledge trees
+* Log in using Google authentication
+* Automatically receive a blockchain wallet (no MetaMask required)
+* Choose a seed topic (e.g., Smart Contracts)
+* Grow AI-generated structured subtopics
+* Unlock deeper knowledge through lock-based progression
+* Automatically mint NFTs when mastery milestones are reached
+* Learn blockchain mechanics through an interactive simulator
 
-## Game Mechanics
+The tree visually represents knowledge growth. Branches expand into structured subtopics generated using Groq AI.
 
-### Tools Available
-1. **Growth Tool**: Click on nodes to grow new branches with search results
-2. **Cut Tool**: Click and drag to prune unwanted branches
-3. **Leaves Tool**: Create flashcards from search results on branches
-4. **Flower Tool**: Add flowers to branch ends (knowledge blossoming)
-5. **Fruit Tool**: Transform flowers into apples (fruit of labor)
-6. **Reposition Tool**: Drag branch ends to move and resize branches
-7. **Study Tool**: Hover over nodes to view search result details
-8. **Pan Tool**: Drag to move around the view
+---
 
-### Core Gameplay
-1. **Start**: Enter a search query to begin growing your knowledge tree
-2. **Grow**: Use the growth tool to expand branches with AI-powered search results
-3. **Prune**: Cut away branches that don't contribute to your learning goals
-4. **Study**: Create flashcards and study materials from your search results
-5. **Progress**: Watch your knowledge tree evolve with flowers and fruits
+## 🚀 Core Features
 
-## Installation & Setup
+### 🌳 AI-Generated Knowledge Trees (Groq AI)
+
+Users select a seed topic such as:
+
+* Smart Contracts
+* Blockchain Fundamentals
+* NFTs
+* DeFi
+
+Groq AI generates structured subtopics dynamically, forming branches that expand logically from the root.
+
+The system maintains topic hierarchy and ensures meaningful progression.
+
+---
+
+### 🔐 Lock-Based Learning System
+
+BrainBonsai enforces structured mastery:
+
+* Users cannot unlock deeper branches unless prerequisite branches are completed
+* Prevents skipping foundational knowledge
+* Encourages sequential understanding
+
+This ensures conceptual clarity instead of surface-level browsing.
+
+---
+
+### 🪙 Automatic NFT Minting
+
+NFT rewards are generated automatically.
+
+When:
+
+* A knowledge tree grows beyond 8 branches
+* The user completes structured progression milestones
+
+An NFT is minted automatically via Solidity smart contracts.
+
+The NFT represents proof of learning achievement and is sent directly to the user's generated wallet.
+
+No manual minting required.
+
+---
+
+### 🔐 Google Authentication + Wallet Creation
+
+To remove Web3 friction:
+
+* Users log in using Google OAuth
+* A blockchain wallet is automatically generated
+* No MetaMask setup required
+* Designed for beginners entering Web3
+
+Wallets are securely tied to user accounts and interact with the smart contract system for NFT minting.
+
+---
+
+## 🌿 BlockLearn — Interactive Blockchain Simulator
+
+BrainBonsai includes a fully interactive blockchain simulator called **BlockLearn**.
+
+Instead of reading about blockchain concepts, users simulate them directly.
+
+### What Users Learn:
+
+* Wallet creation
+* Public & private keys
+* Blockchain ledger mechanics
+* Transactions
+* Gas fees
+* Mempool behavior
+* Block mining
+* Hashing
+* Transaction confirmation
+
+---
+
+### 🪙 Bonsai Token (BON)
+
+The simulator uses **Bonsai Token (BON)**:
+
+* BON behaves like ETH
+* Used for sending transactions
+* Demonstrates gas mechanics safely
+* No real crypto involved
+
+---
+
+### 🔁 Transaction Lifecycle Simulation
+
+Users can:
+
+1. Create a wallet
+2. Generate an address
+3. Send BON tokens
+4. Select gas speed (Slow / Standard / Fast)
+5. Sign and broadcast transactions
+6. Watch transactions move:
+
+   * Wallet → Mempool → Block
+7. View the public blockchain ledger
+8. Inspect blocks, hashes, gas fees, and transaction amounts
+
+The journey overlay visually shows how transactions propagate through the network.
+
+This interactive simulation teaches blockchain fundamentals intuitively.
+
+---
+
+## 🧠 Game Flow
+
+### Step 1: Login
+
+Google authentication creates a wallet automatically.
+
+### Step 2: Choose a Seed
+
+Select a topic like Smart Contracts.
+
+### Step 3: Grow the Tree
+
+Groq AI generates structured subtopics as branches.
+
+### Step 4: Unlock Knowledge
+
+Complete branches to unlock deeper concepts.
+
+### Step 5: Reach Milestone
+
+When tree size exceeds 8+ branches, NFT minting triggers automatically.
+
+### Step 6: Learn Blockchain
+
+Use BlockLearn simulator to understand real blockchain mechanics interactively.
+
+---
+
+## 🧱 Technology Stack
+
+### Backend
+
+* FastAPI
+* SQLAlchemy
+* SQLite
+* Google OAuth
+* Groq AI API
+
+### Frontend
+
+* Vanilla JavaScript
+* HTML5 Canvas
+* Interactive simulation modules
+
+### Blockchain
+
+* Solidity smart contracts
+* Automated NFT minting logic
+* Wallet generation system
+
+---
+
+## 🔗 Smart Contracts
+
+Written in Solidity.
+
+Responsibilities:
+
+* Mint achievement NFTs
+* Store metadata for learning milestones
+* Interact with backend wallet system
+* Trigger minting automatically when tree milestone conditions are met
+
+---
+
+## 🗄 Database Design
+
+Core entities:
+
+* User
+* Wallet
+* LearningSession
+* Branch
+* NFTAchievement
+* BlockchainSimulationState
+
+Learning state is stored to enforce progression locks and milestone tracking.
+
+---
+
+## ⚙️ Installation & Setup
 
 ### Prerequisites
-- Python 3.8+
-- Virtual environment (recommended)
 
-### Quick Start
+* Python 3.8+
+* Virtual environment recommended
 
-1. Navigate to the backend directory:
+---
+
+### Backend Setup
+
 ```bash
 cd backend
-```
-
-2. Create and activate a virtual environment:
-```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
+venv\Scripts\activate
 pip install -r requirements.txt
-```
-
-4. Run the server:
-```bash
 python main.py
 ```
 
-5. Open your browser and go to: `http://localhost:8001`
+Server runs at:
+
+```
+http://localhost:8001
+```
+
+---
 
 ### Environment Variables
-Create a `.env` file in the `backend/` directory:
+
+Create a `.env` file in `backend/`:
+
 ```
-PERPLEXITY_API_KEY=your_perplexity_api_key_here
+GROQ_API_KEY=your_groq_api_key
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+BLOCKCHAIN_PRIVATE_KEY=your_private_key
 ```
-## Technical Implementation
 
-### Architecture
-- **Backend**: FastAPI server with SQLite database
-- **Frontend**: Vanilla JavaScript with HTML5 Canvas rendering
-- **AI Integration**: Perplexity API for real-time knowledge generation
+---
 
-### Key API Endpoints
+## 🎯 Vision
 
-**`POST /api/search`** - Initial Knowledge Tree Creation
-- Uses Perplexity `sonar-pro` with structured JSON output
-- Generates exactly 5 unique knowledge areas from user query
+BrainBonsai aims to:
 
-**`POST /api/web-search`** - Branch Growth with Negative Prompting
-- **Key Feature**: Uses negative prompting to exclude existing results
-- Ensures each growth session returns fresh, non-redundant information
-- Constructs queries like: `"machine learning -"existing result 1" -"existing result 2"`
+* Remove Web3 onboarding friction
+* Teach blockchain mechanics interactively
+* Enforce structured mastery
+* Reward learning with verifiable NFTs
+* Combine AI + Education + Blockchain into one ecosystem
 
-**`POST /api/save-game-state`** - Public Game Storage
-- Saves complete game state (public saves - all games are shareable)
-- Stores branches, search results, flashcards, and visual elements
+It is a beginner-friendly Web3 learning platform where knowledge grows like a tree — and mastery becomes a digital asset.
 
-**`POST /api/create-flashcards`** - AI Study Material Generation
-- Uses Perplexity to create flashcards from search content
-- Links flashcards to specific tree nodes with difficulty ratings
-
-### Perplexity API Integration
-
-#### Two-Phase Approach
-1. **Initial Search**: `sonar-pro` chat completion for structured knowledge areas
-2. **Subsequent Growth**: Search API with negative prompting for unique results
-
-#### Negative Prompting Strategy
-- **Purpose**: Prevents redundant information across growth sessions
-- **Implementation**: Excludes existing search result titles and snippets
-- **Result**: Each branch growth returns fresh, unique content
-
-### Database Design
-- **Relational Model**: GameSession → SearchResult → Branch hierarchy
-- **Public Access**: All saved games are publicly accessible
-- **Cascade Deletion**: Automatic cleanup when sessions are deleted
-
-### Key Technologies
-**Backend**: FastAPI, SQLAlchemy, Perplexity API  
-**Frontend**: HTML5 Canvas, Vanilla JavaScript  
-**Database**: SQLite with relational modeling
-
-## License
-
-Created for Perplexity Hackathon. Tree growth/prune mechanic inspired by Prune game by Joel McDonald.
